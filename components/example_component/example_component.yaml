@@ -1,0 +1,7 @@
+devices: True
+
+src:
+  - gary_core_status
+
+ros_pkgs:
+  - gary_status_engine
