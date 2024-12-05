@@ -3,6 +3,7 @@ devices: True
 src:
   - gary_core_status
   - gary_core_common
+  - gary_example_repo
 
 ros_pkgs:
   - gary_example_package
