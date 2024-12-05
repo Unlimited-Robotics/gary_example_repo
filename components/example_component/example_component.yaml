@@ -2,6 +2,9 @@ devices: True
 
 src:
   - gary_core_status
+  - gary_core_common
 
 ros_pkgs:
+  - gary_example_package
   - gary_status_engine
+  - gary_controller_base
