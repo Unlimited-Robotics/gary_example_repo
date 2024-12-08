@@ -24,10 +24,19 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+# Install
+
+install(
+        DIRECTORY config
+        DESTINATION share/${PROJECT_NAME}
+)
+
 install(
   DIRECTORY launch
   DESTINATION share/${PROJECT_NAME}/
 )
 
+install(TARGETS ${EXECUTABLE_NAME}
+        DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
