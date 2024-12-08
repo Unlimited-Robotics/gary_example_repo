@@ -9,8 +9,8 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclpy REQUIRED)
 
-set(EXAMPLE example_engine)
-add_executable(${EXAMPLE} src/example_engine.cpp)
+set(EXECUTEABLE example_engine)
+add_executable(${EXECUTEABLE} src/example_engine.cpp)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -23,5 +23,11 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
+install(
+  DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}/
+)
+
 
 ament_package()
