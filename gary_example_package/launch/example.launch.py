@@ -72,8 +72,8 @@ def launch_setup(context, *args, **kwargs):
     )
 
     nodes = [
-        example_node,
-        interaction_node
+        interaction_node,
+        example_node
     ]
 
     return nodes
