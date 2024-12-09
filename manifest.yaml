@@ -1,3 +1,7 @@
 dependencies:
-  gary_core_status: 4.14.beta
+  gary_core_common: 4.21.beta
+  gary_core_peripherals: 4.26.beta
+  gary_core_control: 4.14.beta
+  gary_core_media: 4.11.beta
+  
 version: 4.0.beta
