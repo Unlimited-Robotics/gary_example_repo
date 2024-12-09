@@ -11,7 +11,7 @@ class ExampleEngine(Node):
         self.get_logger().info('Optional commands:')
         self.get_logger().info('  - teleop_keyboard')
         self.get_logger().info('  - leds')
-        self.get_logger().info('  - easter')
+        self.get_logger().info('  - sounds')
         self.get_logger().info('='*50)
 
 

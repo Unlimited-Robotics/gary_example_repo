@@ -54,6 +54,21 @@ def launch_setup(context, *args, **kwargs):
         else:
             print("- " + path)
 
+    sound_params = []
+    sound_config =  os.path.join(
+        get_package_share_directory('gary_sound_engine'),
+        'config',
+        'config.yaml'
+        )
+    sound_params.append(sound_config)
+
+    print(YELLOW + "Sound parameters loaded from:" + RESET)
+    for path in sound_params:
+        if not os.path.exists(path):
+            print(RED + "Non-existent " + path + " file!" + RESET)
+        else:
+            print("- " + path)
+
     # Nodes creations
     example_node = Node(
         package = "gary_example_package",
@@ -68,11 +83,20 @@ def launch_setup(context, *args, **kwargs):
         executable = "leds_engine",
         namespace = namespace_,
         parameters = leds_params,
-        output = "both",
+        output = "both"
+    )
+
+    sound_node = Node(
+        package = "gary_sound_engine",
+        executable = "sound_engine",
+        namespace = namespace_,
+        parameters = sound_params,
+        output = "screen"
     )
 
     nodes = [
         interaction_node,
+        sound_node,
         example_node
     ]
 

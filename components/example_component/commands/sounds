@@ -1,0 +1,22 @@
+#!/bin/bash
+
+commands=(
+"ros2 action send_goal -f /gary/sound/play_predefined_sound raya_audio_msgs/action/PlayPredefinedSound '{ name: "attention", volume: 100, overwrite: false }'"
+"ros2 action send_goal -f /gary/sound/play_predefined_sound raya_audio_msgs/action/PlayPredefinedSound '{ name: "thank_you_1", volume: 100, overwrite: false }'"
+"ros2 action send_goal -f /gary/sound/play_predefined_sound raya_audio_msgs/action/PlayPredefinedSound '{ name: "clear_the_way_1", volume: 100, overwrite: false }'"
+"ros2 action send_goal -f /gary/sound/play_predefined_sound raya_audio_msgs/action/PlayPredefinedSound '{ name: "button_pressed_sound", volume: 100, overwrite: false }'"
+"ros2 action send_goal -f /gary/sound/play_predefined_sound raya_audio_msgs/action/PlayPredefinedSound '{ name: "success", volume: 100, overwrite: false }'"
+"ros2 action send_goal -f /gary/sound/play_predefined_sound raya_audio_msgs/action/PlayPredefinedSound '{ name: "charging", volume: 100, overwrite: false }'"
+"ros2 action send_goal -f /gary/sound/play_predefined_sound raya_audio_msgs/action/PlayPredefinedSound '{ name: "beep", volume: 100, overwrite: false }'"
+)
+
+# Number of commands
+total_commands=${#commands[@]}
+
+# Select random command
+random_index=$((RANDOM % total_commands))
+selected_command=${commands[$random_index]}
+
+# Execute
+echo "Executing: $selected_command"
+eval $selected_command

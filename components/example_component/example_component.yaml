@@ -5,6 +5,7 @@ src:
   - gary_core_common
   - gary_core_peripherals
   - gary_core_control
+  - gary_core_media
 
 ros_pkgs:
   - gary_example_package
@@ -13,3 +14,6 @@ ros_pkgs:
   - gary_leds
   - gary_leds_msgs
   - gary_controller_base
+  - gary_sound_engine
+  - gary_media_bringup
+  - raya_audio_msgs
