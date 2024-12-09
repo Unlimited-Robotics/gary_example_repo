@@ -35,42 +35,15 @@ MAGENTA = '\033[95m'
 CYAN = '\033[96m'
 RESET = '\033[0m'
 
-DEFAULT_CONFIG_PATH = \
-    f'{os.environ["ROBOT_CONFIG_PATH"]}/example_package/example_config.yaml'
-
 def launch_setup(context, *args, **kwargs):
     # Get URDF via xacro
     namespace_ = LaunchConfiguration("namespace").perform(context)
-
-    default_config = DEFAULT_CONFIG_PATH \
-        if os.path.exists(DEFAULT_CONFIG_PATH) else os.path.join(
-            get_package_share_directory('gary_example_package'),
-            'config',
-            'example_config.yaml'
-            )
-
-    config_path_list = []
-    config_path_list.append(default_config)
-    config_path_list.append(f'{os.environ["ROBOT_CONFIG_PATH"]}/general.config.yaml')
-
-    print(YELLOW + "List of loaded parameters" + RESET)
-    for path in config_path_list:
-        if not os.path.exists(path):
-            print(RED + "Non-existent " + path + " file!" + RESET)
-        else:
-            print("- " + path)
-
     status_node = Node(
         package="gary_example_package",
         executable="example_engine.py",
         namespace=namespace_,
-        parameters=config_path_list,
-        output="both",
-        respawn=True,
-        respawn_attempts=3,
-        respawn_delay=5.0,
-        respawn_attempt_timeout=20.0,
-        respawn_longterm_delay=60.0,
+        parameters=[],
+        output="both"
         )
 
     nodes = [
