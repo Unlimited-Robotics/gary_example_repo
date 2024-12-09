@@ -1,42 +1,20 @@
 cmake_minimum_required(VERSION 3.8)
 project(gary_example_package)
 
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
-endif()
-
-# find dependencies
+# Find ament_cmake to enable ROS 2 build macros
 find_package(ament_cmake REQUIRED)
 find_package(rclpy REQUIRED)
 
-set(EXECUTEABLE example_engine)
-add_executable(${EXECUTEABLE} src/example_engine.cpp)
-
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # comment the line when a copyright and license is added to all source files
-  set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # comment the line when this package is in a git repo and when
-  # a copyright and license is added to all source files
-  set(ament_cmake_cpplint_FOUND TRUE)
-  ament_lint_auto_find_test_dependencies()
-endif()
-
-# Install
-
-install(
-        DIRECTORY config
-        DESTINATION share/${PROJECT_NAME}
+# Install Python script
+install(PROGRAMS
+  resource/example_engine.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
-install(
-  DIRECTORY launch
-  DESTINATION share/${PROJECT_NAME}/
+# Install launch file
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}
 )
 
-install(TARGETS ${EXECUTABLE_NAME}
-        DESTINATION lib/${PROJECT_NAME})
-
+# Call the ament_package macro to finalize the package
 ament_package()

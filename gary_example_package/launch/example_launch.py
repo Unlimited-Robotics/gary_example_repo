@@ -60,12 +60,9 @@ def launch_setup(context, *args, **kwargs):
         else:
             print("- " + path)
 
-    print(RED + "L, do you know, gods of death who love apple have red hands?" + RESET)
-
-
     status_node = Node(
         package="gary_example_package",
-        executable="example_engine",
+        executable="example_engine.py",
         namespace=namespace_,
         parameters=config_path_list,
         output="both",
@@ -74,7 +71,7 @@ def launch_setup(context, *args, **kwargs):
         respawn_delay=5.0,
         respawn_attempt_timeout=20.0,
         respawn_longterm_delay=60.0,
-    )
+        )
 
     nodes = [
         status_node,
