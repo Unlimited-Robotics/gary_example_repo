@@ -1,0 +1,11 @@
+#!/bin/bash
+
+exec ros2 run gary_teleop teleop \
+    --ros-args \
+        -p initial_x_speed:=0.1 \
+        -p initial_y_speed:=0.1 \
+        -p initial_rot_speed:=0.1 \
+        -p max_x_speed:=0.5 \
+        -p max_y_speed:=0.5 \
+        -p max_rot_speed:=0.4 \
+    --remap cmd_vel:=/gary/wheels/cmd_vel

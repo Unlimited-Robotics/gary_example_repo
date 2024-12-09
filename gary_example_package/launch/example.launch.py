@@ -36,18 +36,44 @@ CYAN = '\033[96m'
 RESET = '\033[0m'
 
 def launch_setup(context, *args, **kwargs):
-    # Get URDF via xacro
     namespace_ = LaunchConfiguration("namespace").perform(context)
-    status_node = Node(
-        package="gary_example_package",
-        executable="example_engine.py",
-        namespace=namespace_,
-        parameters=[],
-        output="both"
+
+    # Configs
+    leds_params = []
+    leds_config = os.path.join(
+        get_package_share_directory('gary_leds'),
+        'config',
+        'config.yaml'
         )
+    leds_params.append(leds_config)
+
+    print(YELLOW + "Leds parameters loaded from:" + RESET)
+    for path in leds_params:
+        if not os.path.exists(path):
+            print(RED + "Non-existent " + path + " file!" + RESET)
+        else:
+            print("- " + path)
+
+    # Nodes creations
+    example_node = Node(
+        package = "gary_example_package",
+        executable = "example_engine.py",
+        namespace = namespace_,
+        parameters = [],
+        output = "both"
+        )
+    
+    interaction_node = Node(
+        package = "gary_leds",
+        executable = "leds_engine",
+        namespace = namespace_,
+        parameters = leds_params,
+        output = "both",
+    )
 
     nodes = [
-        status_node,
+        example_node,
+        interaction_node
     ]
 
     return nodes

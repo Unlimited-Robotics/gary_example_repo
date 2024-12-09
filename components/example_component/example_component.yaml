@@ -3,9 +3,13 @@ devices: True
 src:
   - gary_example_repo
   - gary_core_common
-  - gary_core_status
+  - gary_core_peripherals
+  - gary_core_control
 
 ros_pkgs:
   - gary_example_package
-  - gary_status_engine
+  - gary_teleop
+  - gary_can_utils
+  - gary_leds
+  - gary_leds_msgs
   - gary_controller_base
