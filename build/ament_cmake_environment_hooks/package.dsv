@@ -1,0 +1,4 @@
+source;share/gary_example_package/local_setup.bash
+source;share/gary_example_package/local_setup.dsv
+source;share/gary_example_package/local_setup.sh
+source;share/gary_example_package/local_setup.zsh
