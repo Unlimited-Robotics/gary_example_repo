@@ -27,9 +27,8 @@ class ExampleEngine(Node):
     # Published message content
     def publish_message(self):
         msg = String()
-        msg.data = str(self.i) if self.i > 0 else 'Hello from example publisher!'
+        msg.data = f'Publishing self.i = {self.i}'
         self.publisher_.publish(msg)
-        self.get_logger().info(f'Publishing i = : "{msg.data}"')
         self.i += 1
 
 
