@@ -16,7 +16,7 @@ class ExampleEngine(Node):
         self.get_logger().info('  - leds')
         self.get_logger().info('  - sounds')
         self.get_logger().info(
-            'Example publisher to topic /gary/example/example_topic')
+            'Example publisher on topic /gary/example/example_topic')
         self.get_logger().info('='*50)
 
         # Publish a counter in topic 'example_topic'
