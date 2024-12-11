@@ -14,6 +14,5 @@ ros_pkgs:
   - gary_leds
   - gary_leds_msgs
   - gary_controller_base
-  - gary_sound_engine
   - gary_media_bringup
   - raya_audio_msgs
