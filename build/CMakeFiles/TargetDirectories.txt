@@ -1,9 +1,0 @@
-/home/kai/ur_dev/devenv/src/gary_example_repo/build/CMakeFiles/uninstall.dir
-/home/kai/ur_dev/devenv/src/gary_example_repo/build/CMakeFiles/gary_example_package_uninstall.dir
-/home/kai/ur_dev/devenv/src/gary_example_repo/build/CMakeFiles/test.dir
-/home/kai/ur_dev/devenv/src/gary_example_repo/build/CMakeFiles/edit_cache.dir
-/home/kai/ur_dev/devenv/src/gary_example_repo/build/CMakeFiles/rebuild_cache.dir
-/home/kai/ur_dev/devenv/src/gary_example_repo/build/CMakeFiles/list_install_components.dir
-/home/kai/ur_dev/devenv/src/gary_example_repo/build/CMakeFiles/install.dir
-/home/kai/ur_dev/devenv/src/gary_example_repo/build/CMakeFiles/install/local.dir
-/home/kai/ur_dev/devenv/src/gary_example_repo/build/CMakeFiles/install/strip.dir
